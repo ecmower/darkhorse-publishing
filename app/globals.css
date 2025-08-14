@@ -6,6 +6,8 @@
 
 @theme {
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 
   /* Custom animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;

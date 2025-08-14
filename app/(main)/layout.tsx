@@ -10,12 +10,14 @@ export default async function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { isEnabled: isDraftMode } = await draftMode();
+  
   return (
     <>
       <Header />
       <main>{children}</main>
       <SanityLive />
-      {(await draftMode()).isEnabled && (
+      {isDraftMode && (
         <>
           <DisableDraftMode />
           <VisualEditing />
