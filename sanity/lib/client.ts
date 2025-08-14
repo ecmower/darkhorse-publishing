@@ -11,4 +11,6 @@ export const client = createClient({
   stega: {
     studioUrl: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000") + "/studio",
   },
+  // Enable real-time updates
+  token: process.env.SANITY_API_READ_TOKEN,
 });
