@@ -9,6 +9,8 @@ export function generatePageMetadata({
   page: PAGE_QUERYResult | POST_QUERYResult;
   slug: string;
 }) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  
   return {
     title: page?.meta_title,
     description: page?.meta_description,
@@ -17,7 +19,7 @@ export function generatePageMetadata({
         {
           url: page?.ogImage
             ? urlFor(page?.ogImage).quality(100).url()
-            : `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+            : `${siteUrl}/images/og-image.jpg`,
           width: page?.ogImage?.asset?.metadata?.dimensions?.width || 1200,
           height: page?.ogImage?.asset?.metadata?.dimensions?.height || 630,
         },
